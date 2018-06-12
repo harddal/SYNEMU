@@ -5,3 +5,4 @@
 Emulates Synergy's 29b TPT computer, without TPT!
 
 Runs code assembled through SYNASM and displays the systems registers as well as current instruction execution information.
+Currently unfinished but does emulate around half of the (small) instruction set.
