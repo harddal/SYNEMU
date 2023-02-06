@@ -83,6 +83,15 @@ void printBuffer(console_desc desc, std::stringstream &s)
 	{
 		c = out;
 
+		if (x > _display_size_width - 1) {
+			x = 3;
+			++y;
+		}
+		else if (y > _display_size_height - 1) {
+			y = 1;
+			x++;
+		}
+
 		// Handle newlines
 		if (c == 'n')
 		{
@@ -92,19 +101,9 @@ void printBuffer(console_desc desc, std::stringstream &s)
 		else
 			printxy(desc, x, y, &c);
 
-
 		if (x < _display_size_width &&
 			y < _display_size_height)
 			x++;
-
-		else if (x > _display_size_width - 1) {
-			x = 3;
-			++y;
-		} 
-		else if (y > _display_size_height - 1) {
-			y = 1;
-			x++;
-		}
 	}
 }
 
